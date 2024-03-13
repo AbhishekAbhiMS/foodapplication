@@ -15,10 +15,11 @@ export default function Headder() {
     setislogin(loggedin)
   },[loggedin])
   const NavUnlisted = styled.ul`
-
+width:100%;
   display: flex;
   alignItems:start;
   transform: skew(26deg);
+  justify-content: space-between;
 margin:0px;
   a {
     text-decoration: none;
@@ -26,7 +27,7 @@ margin:0px;
 
   li {
     color: #ae275f;
-    margin: 0 2rem;
+    margin:0 5px;
     font-size: 17px;
     font-weight:600;
     position: relative;
@@ -51,19 +52,24 @@ margin:0px;
       
       {islogin?<div className='trappizoid1_navitems_alogin'>
     <NavUnlisted>
-      <NavLink to="/home" activeClassName="current" exact>
+      <div style={{display:'flex', width: '45%',justifyContent: 'space-between'
+}}><NavLink to="/home" activeClassName="current" exact>
         <li>Home</li>
       </NavLink>
       <NavLink to="#" activeClassName="current" exact>
-        <li>Orders</li>
+        <li>OurMenu</li>
       </NavLink>
       <NavLink to="#" activeClassName="current" exact>
+        <li>Orders</li>
+      </NavLink></div>
+      <div style={{display:'flex', width: '16%',justifyContent: 'space-between',marginRight:'22px'
+}}> <NavLink to="#" activeClassName="current" exact>
         <li>
         <Badge color='primary' badgeContent={1} max={9}><ShoppingCartIcon /></Badge></li>
       </NavLink>
       <NavLink to="#" activeClassName="current" exact>
         <li><SettingsIcon/></li>
-      </NavLink>
+      </NavLink></div>
     </NavUnlisted>
       </div>:
     <div className='trappizoid1_navitems_alogin'>
